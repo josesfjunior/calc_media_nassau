@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Calculadora de Média</title>
 </head>
+
 <body>
     <h1>Calculadora de Média Uninassau</h1>
-    Primeira nota <input id="nota1" type="number" required= true> <br />
-    Segunda  nota <input id="nota2" type="number" required= true > <br />
+    Primeira nota <input id="nota1" type="number" required=true> <br />
+    Segunda nota <input id="nota2" type="number" required=true> <br />
 
 
     <button onclick="media()">Calcular Média</button>
 
     <script type="text/javascript">
- 
-     function media(){
-      var nota1 = parseFloat(document.getElementById("nota1").value);
-      var nota2 = parseFloat(document.getElementById("nota2").value);
- 
-      var media = (nota1 + nota2)/2 ;
-      if (media >=7){
-        alert(`Passou com média: ${media}`)
-      }
 
-      if(media >= 4 && media <= 6,9){
-        const nota_minima= (10 - media);
-        alert(`Está na final e precisa de: ${nota_minima}`)
-      }
+        function media() {
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
 
- 
-        
- 
-     }
-  </script>
+            const media = (nota1 + nota2) / 2;
+            console.log(media)
+            if (media >= 7) {
+                alert(`Passou com média: ${media}`)
+            }
+
+            if (media >= 4) {
+                if(media <= 6,9){
+                    const nota_minima = (10 - media);
+                    alert(`Está na final e precisa de: ${nota_minima}`)
+                }
+            }
+            if (media < 4) {
+                alert("Reprovado")
+            }
+
+
+
+
+        }
+    </script>
 
 </body>
+
 </html>
